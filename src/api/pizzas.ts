@@ -17,3 +17,10 @@ router.post("/pizzas", async (req, res) => {
     .returning("*");
   res.json(pizza);
 });
+
+router.delete("/pizzas/:id", async (req, res) => {
+  const pizza = await PizzaModel.query()
+    .deleteById(req.params.id)
+    .returning("*");
+  res.json(pizza);
+});
