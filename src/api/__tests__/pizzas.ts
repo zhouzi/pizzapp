@@ -1,7 +1,6 @@
-import express from "express";
 import supertest from "supertest";
 import { database } from "../../database";
-import { router } from "../pizzas";
+import { app } from "../../app";
 
 describe("/api/pizzas", () => {
   beforeAll(async () => {
@@ -13,8 +12,8 @@ describe("/api/pizzas", () => {
   });
 
   it("should return pizzas", async () => {
-    const request = supertest(express().use(router));
-    const response = await request.get("/pizzas");
+    const request = supertest(app);
+    const response = await request.get("/api/pizzas");
 
     expect(response.status).toBe(200);
   });
