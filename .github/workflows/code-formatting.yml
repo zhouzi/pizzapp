@@ -1,9 +1,5 @@
 name: Unit tests
-on:
-  push:
-    branches: [main]
-  pull_request:
-    branches: [main]
+on: [push]
 jobs:
   code-formatting:
     name: Code formatting
