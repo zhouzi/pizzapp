@@ -1,3 +1,7 @@
 {
+  "name": "PizzApp",
+  "description": "PizzApp demo app",
+  "repository": "https://github.com/zhouzi/pizzapp",
+  "logo": "https://placehold.it/200x200",
   "addons": ["heroku-postgresql"]
 }
