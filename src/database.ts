@@ -1,4 +1,4 @@
-import { Model } from "objection";
+import { JSONSchema, Model } from "objection";
 import Knex from "knex";
 import config from "./knexfile";
 
@@ -12,15 +12,15 @@ export class PizzaModel extends Model {
   price!: number;
   size!: "S" | "L" | "XL";
 
-  static get tableName() {
+  static get tableName(): string {
     return "pizzas";
   }
 
-  static get idColumn() {
+  static get idColumn(): string {
     return "id";
   }
 
-  static get jsonSchema() {
+  static get jsonSchema(): JSONSchema {
     return {
       type: "object",
       required: ["name", "price", "size"],
