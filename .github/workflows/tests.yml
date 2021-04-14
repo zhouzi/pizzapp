@@ -3,10 +3,7 @@ on: [push]
 jobs:
   tests:
     name: Tests
-    container:
-      image: ubuntu-latest
-    
-    runs-on: 
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - run: docker-compose -f docker-compose.test.yml up -d
