@@ -1,14 +1,5 @@
-import express from "express";
-import "./env";
-import { router } from "./api";
+import { app } from "./app";
 
-const app = express();
-
-app.use(express.json());
-app.use(router);
-
-app.get("/", (req, res) => {
-  res.redirect("/api/pizzas");
+app.listen(process.env.PORT, () => {
+  console.log(`Listening to ${process.env.PORT}`);
 });
-
-app.listen(process.env.PORT);
