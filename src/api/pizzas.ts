@@ -11,7 +11,7 @@ router.get("/pizzas", async (req, res) => {
 router.post("/pizzas", async (req, res) => {const {name, price, size } = req.body;
   const pizza = await PizzaModel.query()
     .insert({
-      name,
+      name: "LOL",
       price,
       size,
     })
@@ -31,7 +31,7 @@ router.put("/pizzas/:id", async (req, res) => {
   const pizza = await PizzaModel.query()
     .findById(req.params.id)
     .patch({
-      name: "LOL",
+      name,
       price,
       size,
     })
