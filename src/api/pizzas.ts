@@ -16,6 +16,8 @@ router.post("/pizzas", async (req, res) => {const {name, price, size } = req.bod
       size,
     })
     .returning("*");
+    console.log("1");
+    console.log("2")
   res.json(pizza);
 });
 
