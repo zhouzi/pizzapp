@@ -17,4 +17,18 @@ describe("/api/pizzas", () => {
 
     expect(response.status).toBe(200);
   });
+
+  it("should create a pizza", async () => {
+    const request = supertest(app);
+
+    const pizza = {
+      name: "Margarita",
+      price: 9.99,
+      size: "S",
+    };
+    const response = await request.post("/api/pizzas").send(pizza);
+
+    expect(response.status).toBe(200);
+    expect(response.body).toMatchObject(pizza);
+  });
 });
