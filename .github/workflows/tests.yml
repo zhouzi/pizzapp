@@ -7,4 +7,5 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: docker-compose -f docker-compose.test.yml --env-file .env.model up -d
+      - run: docker ps
       - run: docker run app npm run test
