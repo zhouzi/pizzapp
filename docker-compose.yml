@@ -18,5 +18,7 @@ services:
     volumes:
       - ./:/usr/src/app
       - /usr/src/app/node_modules/
+    depends_on:
+      - postgres
 volumes:
   postgres:

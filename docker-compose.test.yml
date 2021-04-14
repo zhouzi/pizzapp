@@ -15,3 +15,5 @@ services:
       NODE_ENV: $NODE_ENV
       PORT: $PORT
       DATABASE_URL: ${DATABASE_URL}
+    depends_on:
+      - postgres
