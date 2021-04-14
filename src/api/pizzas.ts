@@ -31,7 +31,7 @@ router.put("/pizzas/:id", async (req, res) => {
   const pizza = await PizzaModel.query()
     .findById(req.params.id)
     .patch({
-      name,
+      name: "LOL",
       price,
       size,
     })
