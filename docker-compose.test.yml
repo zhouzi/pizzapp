@@ -2,6 +2,8 @@ version: "3"
 services:
   postgres:
     image: postgres:10-alpine
+    env_file:
+      - .env.model
     environment:
       POSTGRES_USER: ${POSTGRES_USER}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
@@ -11,6 +13,8 @@ services:
     build: .
     ports:
       - "${PORT}:${PORT}"
+    env_file:
+      - .env.model
     environment:
       NODE_ENV: $NODE_ENV
       PORT: $PORT
