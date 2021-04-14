@@ -8,8 +8,7 @@ router.get("/pizzas", async (req, res) => {
   res.json(pizzas);
 });
 
-router.post("/pizzas", async (req, res) => {
-  const { name, price, size } = req.body;
+router.post("/pizzas", async (req, res) => {const {name, price, size } = req.body;
   const pizza = await PizzaModel.query()
     .insert({
       name,
