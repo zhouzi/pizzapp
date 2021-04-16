@@ -15,10 +15,5 @@ services:
       NODE_ENV: $NODE_ENV
       PORT: $PORT
       DATABASE_URL: $DATABASE_URL
-    volumes:
-      - ./:/usr/src/app
-      - /usr/src/app/node_modules/
     depends_on:
       - postgres
-volumes:
-  postgres:

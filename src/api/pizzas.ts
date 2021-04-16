@@ -8,6 +8,11 @@ router.get("/pizzas", async (req, res) => {
   res.json(pizzas);
 });
 
+router.get("/pizzas/:id", async (req, res) => {
+  const pizza = await PizzaModel.query().findById(req.params.id);
+  res.json(pizza);
+});
+
 router.post("/pizzas", async (req, res) => {
   const { name, price, size } = req.body;
   const pizza = await PizzaModel.query()
