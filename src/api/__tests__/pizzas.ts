@@ -31,4 +31,11 @@ describe("/api/pizzas", () => {
     expect(response.status).toBe(200);
     expect(response.body).toMatchObject(pizza);
   });
+
+  it("should return a pizza", async () => {
+    const request = supertest(app);
+    const response = await request.get("/api/pizzas/1");
+
+    expect(response.body).toMatchObject({ name: "Margarita" });
+  });
 });
